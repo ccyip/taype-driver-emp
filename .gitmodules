@@ -1,0 +1,9 @@
+[submodule "emp-tool"]
+	path = extern/emp-tool
+	url = https://github.com/emp-toolkit/emp-tool.git
+[submodule "emp-ot"]
+	path = extern/emp-ot
+	url = https://github.com/emp-toolkit/emp-ot.git
+[submodule "emp-sh2pc"]
+	path = extern/emp-sh2pc
+	url = https://github.com/emp-toolkit/emp-sh2pc.git
