@@ -85,3 +85,5 @@ dkms.conf
 
 ## Other
 /opt
+/src/.cache
+/src/build
