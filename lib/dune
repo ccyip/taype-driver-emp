@@ -1,0 +1,20 @@
+(library
+ (name driver)
+ ; ctypes backward compatibility shims warn sometimes; suppress them
+ (flags (:standard -w -9-27))
+ (ctypes
+  (external_library_name libemp-ffi)
+  (build_flags_resolver
+   (vendored
+    (c_flags :standard -I%{env:EMP_INSTALL_PREFIX=}/include)
+    (c_library_flags :standard -L%{env:EMP_INSTALL_PREFIX=}/lib -lemp-ffi)))
+  (headers (include "emp-ffi.h"))
+  (type_description
+   (instance Types)
+   (functor Type_description))
+  (function_description
+   ; (concurrency unlocked)
+   (instance Functions)
+   (functor Function_description))
+  (generated_types Types_generated)
+  (generated_entry_point C)))
