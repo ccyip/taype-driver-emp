@@ -7,11 +7,11 @@
 extern "C" {
 #endif
 
+#define DRIVER_INT_SIZE (32)
+
 void setup_driver(const char *addr, int port, int party, bool quiet);
 
 void finalize_driver(void);
-
-#define DRIVER_INT_SIZE (32)
 
 typedef void *obliv_int;
 
@@ -21,7 +21,17 @@ void obliv_int_destroy(obliv_int n);
 
 int obliv_int_reveal(obliv_int m);
 
+bool obliv_bool_reveal(obliv_int b);
+
 obliv_int obliv_int_add(obliv_int m, obliv_int n);
+
+obliv_int obliv_int_sub(obliv_int m, obliv_int n);
+
+obliv_int obliv_int_eq(obliv_int m, obliv_int n);
+
+obliv_int obliv_int_le(obliv_int m, obliv_int n);
+
+obliv_int obliv_int_mux(obliv_int s, obliv_int m, obliv_int n);
 
 #ifdef __cplusplus
 }

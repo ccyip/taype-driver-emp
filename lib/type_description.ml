@@ -3,7 +3,7 @@ open Ctypes
 module Types (F : Ctypes.TYPE) = struct
   open F
 
-  type obliv_int = int ptr
+  type obliv_int = unit ptr
 
   let driver_int_size = constant "DRIVER_INT_SIZE" int
 
