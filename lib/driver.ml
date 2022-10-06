@@ -19,6 +19,10 @@ let setup_driver addr port party =
 
 let finalize_driver = F.finalize_driver
 
+let collect_stat _ = ()
+
+let report_stat _ = -1
+
 module OInt = struct
 
   let finalise p =

@@ -10,6 +10,10 @@ val setup_driver : string -> int -> int -> unit
 
 val finalize_driver : unit -> unit
 
+val collect_stat : unit -> unit
+
+val report_stat : unit -> int
+
 val obliv_array_new_from : int -> int -> obliv_array
 
 val private_obliv_array_new : int -> obliv_array
