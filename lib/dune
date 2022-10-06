@@ -1,13 +1,14 @@
 (library
  (name driver)
+ (public_name taype-driver-emp)
  ; ctypes backward compatibility shims warn sometimes; suppress them
  (flags (:standard -w -9-27))
  (ctypes
   (external_library_name libemp-ffi)
   (build_flags_resolver
    (vendored
-    (c_flags :standard -I%{env:EMP_INSTALL_PREFIX=}/include)
-    (c_library_flags :standard -L%{env:EMP_INSTALL_PREFIX=}/lib -lemp-ffi)))
+    (c_flags :standard -I%{env:OPAM_SWITCH_PREFIX=}/include)
+    (c_library_flags :standard -L%{env:OPAM_SWITCH_PREFIX=}/lib -lemp-ffi)))
   (headers (include "emp-ffi.h"))
   (type_description
    (instance Types)
