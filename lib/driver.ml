@@ -14,14 +14,19 @@ let setup_driver addr port party =
   then raise (Failure "Unknown party: this driver only supports \
                        two-party-computation (1 and 2)");
   my_party := party;
-  let addr = if party == party_alice then None else Some addr in
+  let addr = if party = party_alice then None else Some addr in
   F.setup_driver addr port party true
 
 let finalize_driver = F.finalize_driver
 
-let collect_stat _ = ()
+let stamp : float ref = ref 0.0
 
-let report_stat _ = -1
+let collect_stat _ = stamp := Unix.gettimeofday ()
+
+let report_stat _ =
+  let now = Unix.gettimeofday () in
+  (* Convert to microseconds. *)
+  (now -. !stamp) *. 1000000.0 |> Int.of_float
 
 module OInt = struct
 
