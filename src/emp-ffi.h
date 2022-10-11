@@ -27,6 +27,10 @@ obliv_int obliv_int_add(obliv_int m, obliv_int n);
 
 obliv_int obliv_int_sub(obliv_int m, obliv_int n);
 
+obliv_int obliv_int_mul(obliv_int m, obliv_int n);
+
+obliv_int obliv_int_div(obliv_int m, obliv_int n);
+
 obliv_int obliv_int_eq(obliv_int m, obliv_int n);
 
 obliv_int obliv_int_le(obliv_int m, obliv_int n);

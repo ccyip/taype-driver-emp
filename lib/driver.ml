@@ -43,6 +43,10 @@ module OInt = struct
 
   let sub m n = finalise (F.obliv_int_sub m n)
 
+  let mul m n = finalise (F.obliv_int_mul m n)
+
+  let div m n = finalise (F.obliv_int_div m n)
+
   let eq m n = finalise (F.obliv_int_eq m n)
 
   let le m n = finalise (F.obliv_int_le m n)
@@ -71,6 +75,10 @@ let obliv_array_mux len a0 a1 a2 =
 let obliv_int_add m n = Array.make 1 (OInt.add m.(0) n.(0))
 
 let obliv_int_sub m n = Array.make 1 (OInt.sub m.(0) n.(0))
+
+let obliv_int_mul m n = Array.make 1 (OInt.mul m.(0) n.(0))
+
+let obliv_int_div m n = Array.make 1 (OInt.div m.(0) n.(0))
 
 let obliv_int_le m n = Array.make 1 (OInt.le m.(0) n.(0))
 

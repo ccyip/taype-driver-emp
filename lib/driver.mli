@@ -30,6 +30,10 @@ val obliv_int_add : obliv_array -> obliv_array -> obliv_array
 
 val obliv_int_sub : obliv_array -> obliv_array -> obliv_array
 
+val obliv_int_mul : obliv_array -> obliv_array -> obliv_array
+
+val obliv_int_div : obliv_array -> obliv_array -> obliv_array
+
 val obliv_int_le : obliv_array -> obliv_array -> obliv_array
 
 val obliv_int_eq : obliv_array -> obliv_array -> obliv_array

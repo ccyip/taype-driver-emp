@@ -60,6 +60,18 @@ obliv_int obliv_int_sub(obliv_int m, obliv_int n) {
   return new Integer((*m_) - (*n_));
 }
 
+obliv_int obliv_int_mul(obliv_int m, obliv_int n) {
+  auto m_ = static_cast<Integer *>(m);
+  auto n_ = static_cast<Integer *>(n);
+  return new Integer((*m_) * (*n_));
+}
+
+obliv_int obliv_int_div(obliv_int m, obliv_int n) {
+  auto m_ = static_cast<Integer *>(m);
+  auto n_ = static_cast<Integer *>(n);
+  return new Integer((*m_) / (*n_));
+}
+
 obliv_int obliv_int_eq(obliv_int m, obliv_int n) {
   auto m_ = static_cast<Integer *>(m);
   auto n_ = static_cast<Integer *>(n);
