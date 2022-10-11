@@ -38,6 +38,12 @@ val obliv_int_le : obliv_array -> obliv_array -> obliv_array
 
 val obliv_int_eq : obliv_array -> obliv_array -> obliv_array
 
+val obliv_bool_not : obliv_array -> obliv_array
+
+val obliv_bool_and : obliv_array -> obliv_array -> obliv_array
+
+val obliv_bool_or : obliv_array -> obliv_array -> obliv_array
+
 val s_int_from : int -> int -> obliv_array
 
 val private_s_int : int -> obliv_array

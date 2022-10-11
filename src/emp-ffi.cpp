@@ -12,7 +12,7 @@ inline const Bit &obliv_int_to_bit(const obliv_int m) {
   return m_->bits[0];
 }
 
-inline obliv_int obliv_int_from_bit(const Bit &b) {
+inline obliv_int obliv_int_of_bit(const Bit &b) {
   auto n = new Integer;
   Bit zero(false, PUBLIC);
   n->bits.resize(DRIVER_INT_SIZE, zero);
@@ -75,13 +75,30 @@ obliv_int obliv_int_div(obliv_int m, obliv_int n) {
 obliv_int obliv_int_eq(obliv_int m, obliv_int n) {
   auto m_ = static_cast<Integer *>(m);
   auto n_ = static_cast<Integer *>(n);
-  return obliv_int_from_bit((*m_) == (*n_));
+  return obliv_int_of_bit((*m_) == (*n_));
 }
 
 obliv_int obliv_int_le(obliv_int m, obliv_int n) {
   auto m_ = static_cast<Integer *>(m);
   auto n_ = static_cast<Integer *>(n);
-  return obliv_int_from_bit((*m_) <= (*n_));
+  return obliv_int_of_bit((*m_) <= (*n_));
+}
+
+obliv_int obliv_bool_not(obliv_int m) {
+  auto m_ = static_cast<Integer *>(m);
+  return obliv_int_of_bit(!obliv_int_to_bit(m_));
+}
+
+obliv_int obliv_bool_and(obliv_int m, obliv_int n) {
+  auto m_ = static_cast<Integer *>(m);
+  auto n_ = static_cast<Integer *>(n);
+  return obliv_int_of_bit(obliv_int_to_bit(m_) & obliv_int_to_bit(n_));
+}
+
+obliv_int obliv_bool_or(obliv_int m, obliv_int n) {
+  auto m_ = static_cast<Integer *>(m);
+  auto n_ = static_cast<Integer *>(n);
+  return obliv_int_of_bit(obliv_int_to_bit(m_) | obliv_int_to_bit(n_));
 }
 
 obliv_int obliv_int_mux(obliv_int s, obliv_int m, obliv_int n) {

@@ -42,6 +42,15 @@ module Functions (F : Ctypes.FOREIGN) = struct
   let obliv_int_le = foreign "obliv_int_le"
       (obliv_int @-> obliv_int @-> returning obliv_int)
 
+  let obliv_bool_not = foreign "obliv_bool_not"
+      (obliv_int @-> returning obliv_int)
+
+  let obliv_bool_and = foreign "obliv_bool_and"
+      (obliv_int @-> obliv_int @-> returning obliv_int)
+
+  let obliv_bool_or = foreign "obliv_bool_or"
+      (obliv_int @-> obliv_int @-> returning obliv_int)
+
   let obliv_int_mux = foreign "obliv_int_mux"
       (obliv_int @-> obliv_int @-> obliv_int @-> returning obliv_int)
 

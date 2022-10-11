@@ -51,6 +51,12 @@ module OInt = struct
 
   let le m n = finalise (F.obliv_int_le m n)
 
+  let bnot m = finalise (F.obliv_bool_not m)
+
+  let band m n = finalise (F.obliv_bool_and m n)
+
+  let bor m n = finalise (F.obliv_bool_or m n)
+
   let mux s m n = finalise (F.obliv_int_mux s m n)
 
 end
@@ -83,6 +89,12 @@ let obliv_int_div m n = Array.make 1 (OInt.div m.(0) n.(0))
 let obliv_int_le m n = Array.make 1 (OInt.le m.(0) n.(0))
 
 let obliv_int_eq m n = Array.make 1 (OInt.eq m.(0) n.(0))
+
+let obliv_bool_not m = Array.make 1 (OInt.bnot m.(0))
+
+let obliv_bool_and m n = Array.make 1 (OInt.band m.(0) n.(0))
+
+let obliv_bool_or m n = Array.make 1 (OInt.bor m.(0) n.(0))
 
 let s_int_from n party = Array.make 1 (OInt.make n party)
 

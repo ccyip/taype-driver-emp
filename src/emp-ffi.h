@@ -35,6 +35,12 @@ obliv_int obliv_int_eq(obliv_int m, obliv_int n);
 
 obliv_int obliv_int_le(obliv_int m, obliv_int n);
 
+obliv_int obliv_bool_not(obliv_int m);
+
+obliv_int obliv_bool_and(obliv_int m, obliv_int n);
+
+obliv_int obliv_bool_or(obliv_int m, obliv_int n);
+
 obliv_int obliv_int_mux(obliv_int s, obliv_int m, obliv_int n);
 
 #ifdef __cplusplus
