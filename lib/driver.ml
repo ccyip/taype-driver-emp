@@ -9,13 +9,13 @@ let party_bob : int = 2
 
 let my_party : int ref = ref party_public
 
-let setup_driver addr port party =
+let setup_driver ?(verbose=false) addr port party =
   if party <> party_alice && party <> party_bob
   then raise (Failure "Unknown party: this driver only supports \
                        two-party-computation (1 and 2)");
   my_party := party;
   let addr = if party = party_alice then None else Some addr in
-  F.setup_driver addr port party true
+  F.setup_driver addr port party (not verbose)
 
 let finalize_driver = F.finalize_driver
 

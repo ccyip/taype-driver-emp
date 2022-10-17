@@ -6,7 +6,7 @@ val party_alice : int
 
 val party_bob : int
 
-val setup_driver : string -> int -> int -> unit
+val setup_driver : ?verbose:bool -> string -> int -> int -> unit
 
 val finalize_driver : unit -> unit
 
