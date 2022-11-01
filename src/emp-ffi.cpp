@@ -3,7 +3,6 @@
 #include <emp-sh2pc/emp-sh2pc.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <sys/_types/_int64_t.h>
 
 using namespace emp;
 
