@@ -74,7 +74,8 @@ let obliv_array_concat a1 a2 = Array.append a1 a2
 
 let obliv_array_slice a pos len = Array.sub a pos len
 
-let obliv_array_mux len a0 a1 a2 =
+let obliv_array_mux a0 a1 a2 =
+  let len = Array.length a1 in
   let b = a0.(0) in
   Array.init len (fun i -> OInt.mux b a1.(i) a2.(i))
 

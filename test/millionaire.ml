@@ -14,7 +14,7 @@ let run party n =
   if unsafe_r_bool c
   then print_endline "bob"
   else print_endline "alice";
-  let d = obliv_array_mux 1 c b a in
+  let d = obliv_array_mux c b a in
   print_int (unsafe_r_int d);
   print_newline ();
   finalize_driver ()

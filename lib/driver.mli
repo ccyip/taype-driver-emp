@@ -24,7 +24,7 @@ val obliv_array_concat : obliv_array -> obliv_array -> obliv_array
 
 val obliv_array_slice : obliv_array -> int -> int -> obliv_array
 
-val obliv_array_mux : int -> obliv_array -> obliv_array -> obliv_array -> obliv_array
+val obliv_array_mux : obliv_array -> obliv_array -> obliv_array -> obliv_array
 
 val obliv_int_add : obliv_array -> obliv_array -> obliv_array
 
