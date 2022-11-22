@@ -61,7 +61,9 @@ module OInt = struct
 
 end
 
-type obliv_array = obliv_int array
+type obliv_array = obliv_int Slice.t
+
+module Array = Slice
 
 let obliv_array_new_from n party =
   Array.init n (fun _ -> OInt.make 0 party)
