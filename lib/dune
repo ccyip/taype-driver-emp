@@ -1,6 +1,6 @@
 (library
  (name driver)
- (public_name taype-driver-emp)
+ (public_name taype-driver-emp-legacy)
  (libraries unix)
  ; ctypes backward compatibility shims warn sometimes; suppress them
  (flags (:standard -w -9-27))

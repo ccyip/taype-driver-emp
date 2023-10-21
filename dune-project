@@ -3,14 +3,14 @@
 
 (generate_opam_files true)
 
-(name taype-driver-emp)
+(name taype-driver-emp-legacy)
 (license "MIT")
 (maintainers "Qianchuan Ye <yeqianchuan@gmail.com>")
 (authors "Qianchuan Ye")
 (source (github ccyip/taype-driver-emp))
 
 (package
- (name taype-driver-emp)
+ (name taype-driver-emp-legacy)
  (depends (ctypes (>= 0.20)))
- (synopsis "Emp-toolkit driver for the Taype language")
+ (synopsis "Emp-toolkit driver (legacy) for the Taype language")
 )
